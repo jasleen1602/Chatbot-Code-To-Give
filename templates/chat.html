@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuzzWomen Chatbot</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/52898db0e5.js" crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
+    <script src="https://kit.fontawesome.com/52898db0e5.js" crossorigin="anonymous"></script>
+
+
+    <style type="text/css">
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            /* background-image: url('bg.jpeg'); */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        nav {
+            background-image: linear-gradient(135deg, #FFFEFF 10%, #D7FFFE 100%);
+            display: flexbox;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2em;
+            padding: 0.5em;
+            margin-top: 0%;
+            color: rgba(26, 30, 59, 1);
+        }
+
+        .icon {
+            height: 50px;
+        }
+
+        .fixed-panel {
+            min-height: 400px;
+            max-height: 400px;
+            background-image: linear-gradient(135deg, #09203f 10%, #537895 100%);
+            /* background-color: #19313cf5; */
+
+            -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+            color: white;
+            overflow: auto;
+        }
+
+        .media-list {
+
+            overflow: auto;
+            clear: both;
+            display: table;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            word-break: normal;
+            line-break: strict;
+        }
+
+        .media-list li {
+            overflow: hidden;
+        }
+
+        .panel {
+            margin-bottom: 25px;
+            background-image: linear-gradient(135deg, #29323c 10%, #485563 100%);
+            /* background-image: linear-gradient(135deg, #a1c4fd 10%, #c2e9fb 100%);; */
+            border: 5px solid transparent;
+            border-radius: 20px;
+            -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+        }
+
+        .panel-info {
+            background-image: linear-gradient(135deg, #434343 10%, #000000 100%);
+            /* background-image: linear-gradient(135deg, #29323c 10%, #485563 100%); */
+            /* background-image: linear-gradient(135deg, #FFFEFF 10%, #D7FFFE 100%); */
+            /* background-image: linear-gradient(135deg, #434343 10%, #000000 100%); */
+            /* background-image: linear-gradient(135deg, #1e3c72 10%, #2a5298 100%); */
+            border-radius: 20px;
+        }
+
+        .panel-info>.panel-heading {
+            color: white;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            /* border-radius: 15px; */
+            background-image: linear-gradient(135deg, #09203f 10%, #537895 100%);
+            /* background-image: linear-gradient(135deg, #a3bded 10%, #6991c7 100%); */
+            border-color: whitesmoke;
+        }
+
+        .panel-footer {
+            padding: 10px 15px;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            /* border-radius: 10px; */
+            background-color: #0c2735;
+            border-top: 1px solid #0c2735;
+            /* border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px */
+        }
+
+        body {
+            background: rgb(96, 143, 149);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background: -moz-linear-gradient(-45deg, rgba(96, 143, 149, 1) 0%, rgba(0, 133, 136, 1) 9%, rgba(12, 36, 73, 1) 52%, rgba(26, 30, 59, 1) 100%);
+            /* FF3.6-15 */
+            background: -webkit-linear-gradient(-45deg, rgba(96, 143, 149, 1) 0%, rgba(0, 133, 136, 1) 9%, rgba(12, 36, 73, 1) 52%, rgba(26, 30, 59, 1) 100%);
+            /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(135deg, rgba(96, 143, 149, 1) 0%, rgba(0, 133, 136, 1) 9%, rgba(12, 36, 73, 1) 52%, rgba(26, 30, 59, 1) 100%);
+            /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#608f95', endColorstr='#1a1e3b', GradientType=1);
+            /* IE6-9 fallback on horizontal gradient */
+        }
+
+        #google_translate_element select {
+            /* display: inline !important; */
+            background: #f6edfd;
+            color: #0c2735;
+            border: none;
+            border-radius: 3px;
+            /* padding: 6px 8px */
+        }
+
+        /* google translate link | logo */
+        .goog-logo-link {
+            display: none !important;
+        }
+
+        .goog-te-gadget {
+            color: transparent !important;
+        }
+
+        /* google translate banner-frame */
+
+        .goog-te-banner-frame.skiptranslate {
+            display: none !important;
+        }
+
+        body {
+            top: 0px !important;
+        }
+
+        #goog-gt-tt,
+        .goog-te-balloon-frame {
+            display: none !important;
+        }
+
+        .goog-text-highlight {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+
+        /* footer  */
+        .site-footer {
+            background-color: #26272b;
+            padding: 45px 0 20px;
+            font-size: 15px;
+            line-height: 24px;
+            color: #737373;
+        }
+
+        .site-footer hr {
+            border-top-color: #bbb;
+            opacity: 0.5
+        }
+
+        .site-footer hr.small {
+            margin: 20px 0
+        }
+
+        .site-footer h6 {
+            color: #fff;
+            font-size: 16px;
+            text-transform: uppercase;
+            margin-top: 5px;
+            letter-spacing: 2px
+        }
+
+        .site-footer a {
+            color: #737373;
+        }
+
+        .site-footer a:hover {
+            color: #3366cc;
+            text-decoration: none;
+        }
+
+        .footer-links {
+            padding-left: 0;
+            list-style: none
+        }
+
+        .footer-links li {
+            display: block
+        }
+
+        .footer-links a {
+            color: #737373
+        }
+
+        .footer-links a:active,
+        .footer-links a:focus,
+        .footer-links a:hover {
+            color: #3366cc;
+            text-decoration: none;
+        }
+
+        .footer-links.inline li {
+            display: inline-block
+        }
+
+        .site-footer .social-icons {
+            text-align: right
+        }
+
+        .site-footer .social-icons a {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            margin-left: 6px;
+            margin-right: 0;
+            border-radius: 100%;
+            background-color: #33353d
+        }
+
+        .copyright-text {
+            margin: 0
+        }
+
+        @media (max-width:991px) {
+            .site-footer [class^=col-] {
+                margin-bottom: 30px
+            }
+        }
+
+        @media (max-width:767px) {
+            .site-footer {
+                padding-bottom: 0
+            }
+
+            .site-footer .copyright-text,
+            .site-footer .social-icons {
+                text-align: center
+            }
+        }
+
+        .social-icons {
+            padding-left: 0;
+            margin-bottom: 0;
+            list-style: none
+        }
+
+        .social-icons li {
+            display: inline-block;
+            margin-bottom: 4px
+        }
+
+        .social-icons li.title {
+            margin-right: 15px;
+            text-transform: uppercase;
+            color: #96a2b2;
+            font-weight: 700;
+            font-size: 13px
+        }
+
+        .social-icons a {
+            background-color: #eceeef;
+            color: #818a91;
+            font-size: 16px;
+            display: inline-block;
+            line-height: 44px;
+            width: 44px;
+            height: 44px;
+            text-align: center;
+            margin-right: 8px;
+            border-radius: 100%;
+            -webkit-transition: all .2s linear;
+            -o-transition: all .2s linear;
+            transition: all .2s linear
+        }
+
+        .social-icons a:active,
+        .social-icons a:focus,
+        .social-icons a:hover {
+            color: #fff;
+            background-color: #29aafe
+        }
+
+        .social-icons.size-sm a {
+            line-height: 34px;
+            height: 34px;
+            width: 34px;
+            font-size: 14px
+        }
+
+        .social-icons a.facebook:hover {
+            background-color: #3b5998
+        }
+
+        .social-icons a.twitter:hover {
+            background-color: #00aced
+        }
+
+        .social-icons a.linkedin:hover {
+            background-color: #007bb6
+        }
+
+        .social-icons a.dribbble:hover {
+            background-color: #ea4c89
+        }
+
+        @media (max-width:767px) {
+            .social-icons li.title {
+                display: block;
+                margin-right: 0;
+                font-weight: 600
+            }
+        }
+
+        /* .responsive{
+    width: 100%;
+    height: auto;
+} */
+
+        /* SITEMAIN
+================================================== */
+        .site-main {
+            background-color: #ffffff;
+            z-index: 1;
+        }
+
+        /*
+   * Sections
+   */
+        .site-section {
+            padding: 100px 0;
+        }
+
+        .site-section h2 {
+            font-family: "Varela", sans-serif;
+            margin: 0;
+            font-size: 32px;
+            color: #196fc2;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .section-subtitle {
+            position: relative;
+            font-family: "Varela", sans-serif;
+            margin: 15px 0 0;
+            font-size: 16px;
+            line-height: 16px;
+            color: #666;
+            letter-spacing: 2px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .section-subtitle span {
+            position: relative;
+        }
+
+        .section-subtitle span:before,
+        .section-subtitle span:after {
+            display: inline-block;
+            content: '';
+            height: 1px;
+            background-color: #666;
+            width: 20px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+        }
+
+        .section-subtitle span:before {
+            left: -30px;
+        }
+
+        .section-subtitle span:after {
+            right: -30px;
+        }
+
+        .section-diff-title h2 {
+            margin: 0;
+            font-weight: 300;
+            color: #666;
+        }
+
+        .section-diff-title p {
+            position: relative;
+            font-family: "Varela", sans-serif;
+            margin: 60px 0 0;
+        }
+
+        .section-diff-title p:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: -30px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            height: 1px;
+            width: 50px;
+            background-color: #666;
+        }
+
+        @media only screen and (max-width: 991px) {
+
+            /* Sections */
+            .site-section {
+                padding: 80px 0;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+
+            /* Sections */
+            .site-section {
+                padding: 60px 0;
+            }
+
+            .site-section h2 {
+                font-size: 24px;
+            }
+
+            .section-subtitle span {
+                display: inline-block;
+                max-width: 230px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .row #babe {
+                flex-direction: column;
+                flex-wrap: wrap;
+                overflow: scroll;
+            }
+        }
+    </style>
+</head>
+
+<body
+    style="height: 100%; margin:0;padding:0; background-image: url('/static/img4.jpg'); background-size:cover; background-repeat: no-repeat;background-attachment: fixed;background-position: center; ">
+
+    <nav
+        style="background-image: linear-gradient(110deg,#53789577 1%, #fffeffd4 10%, #537895 100%); display: flexbox; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-bottom: 2em; padding: 0.5em; margin-top: 0%;color :rgba(26, 30, 59, 1);">
+        <span style="display: inline-flex; flex-direction:row; margin-left: 2em; ">
+            <img class="icon" src="{{url_for('static',filename='logo.png')}}">
+            <a class="navbar-brand" href="#"
+                style="font-weight: bold; color:#2d3845; text-shadow: 1px 2px 2px #5B6876; font-size: 35px;">BuzzWomen</a>
+        </span>
+        <span id="google_translate_element"
+            style="float:right;  position: fixed; font-size: 20px  !important ; padding: 0%; border: 0ch; margin-top:0%;margin-left: 40px;position:relative;"></span>
+    </nav>
+
+    <div class="container background-color: rgb(255,0,255);">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div id="chatPanel" class="panel panel-info">
+                    <div class="panel-heading" style="display: flex; justify-content:space-between">
+                        <img src="{{url_for('static',filename='logo.png')}}" height="20px"><strong>BuzzWomen Bot
+                        </strong>
+                    </div>
+                    <div class="panel-body fixed-panel">
+                        <ul class="media-list">
+                        </ul>
+                    </div>
+                    <div class="panel-footer">
+                        <form action="http://192.168.0.18:5000/ask" method="post" id="chatbot-form">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Enter Message" name="messageText"
+                                    id="messageText" autofocus />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-info" type="button" id="chatbot-form-btn"
+                                        style="background-image: linear-gradient(135deg, #B7F8DB 10%, #50A7C2 100%);"><img
+                                            src="https://cdn-icons-png.flaticon.com/512/1933/1933005.png" width="19"
+                                            height="19"></button>
+                                    <button class="btn btn-info" type="button" id="chatbot-form-btn-clear"
+                                        style="background-image: linear-gradient(135deg, #B7F8DB 10%, #50A7C2 100%);"><img
+                                            src="https://cdn-icons-png.flaticon.com/512/7078/7078826.png" width="19"
+                                            height="19"></button>
+                                    <button class="btn btn-info" type="button" id="chatbot-form-btn-voice"
+                                        style="background-image: linear-gradient(135deg, #B7F8DB 10%, #50A7C2 100%);"><img
+                                            src="https://cdn-icons-png.flaticon.com/128/2282/2282223.png" width="19"
+                                            height="19"></button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script>
+            var exports = {};
+        </script>
+        <script src="https://unpkg.com/speech-to-text@0.7.4/lib/index.js"></script>
+        <script>
+
+            var synth = window.speechSynthesis;
+
+            var msg = new SpeechSynthesisUtterance();
+            var voices = synth.getVoices();
+            msg.voice = voices[0];
+            language = msg.lang
+            msg.rate = 1;
+            msg.pitch = 1;
+
+            //var trans = jQuery('select.goog-te-combo');
+            //language = trans.val()     
+            //console.log(language)
+
+            $('#chatbot-form-btn').click(function (e) {
+                e.preventDefault();
+                $('#chatbot-form').submit();
+            });
+            $('#chatbot-form-btn-clear').click(function (e) {
+                e.preventDefault();
+                $('#chatPanel').find('.media-list').html('');
+            });
+            $('#chatbot-form-btn-voice').click(function (e) {
+                e.preventDefault();
+
+                var onAnythingSaid = function (text) {
+                    console.log('Interim text: ', text);
+                };
+                var onFinalised = function (text) {
+                    console.log('Finalised text: ', text);
+                    $('#messageText').val(text);
+                };
+                var onFinishedListening = function () {
+                    $('#chatbot-form-btn').click();
+                };
+
+                try {
+                    var listener = new SpeechToText(onAnythingSaid, onFinalised, onFinishedListening);
+                    listener.startListening();
+
+                    setTimeout(function () {
+                        listener.stopListening();
+                        if ($('#messageText').val()) {
+                            $('#chatbot-form-btn').click();
+                        }
+                    }, 5000);
+                } catch (error) {
+                    console.log(error);
+                }
+            });
+
+            $('#chatbot-form').submit(function (e) {
+                e.preventDefault();
+                var message = $('#messageText').val();
+                console.log(message)
+                // const settings = {
+                //     "async": true,
+                //     "crossDomain": true,
+                //     "url": "https://google-translate1.p.rapidapi.com/language/translate/v2",
+                //     "method": "POST",
+                //     "headers": {
+                //         "content-type": "application/x-www-form-urlencoded",
+                //         "Accept-Encoding": "application/gzip",
+                //         "X-RapidAPI-Key": "af60f20a74msh60f3ff836106b88p1e643ejsnf88b8b559d64",
+                //         "X-RapidAPI-Host": "google-translate1.p.rapidapi.com"
+                //     },
+                //     "data": {
+                //         "q": "hello world",
+                //         "target": "hi",
+                //         "source": "en"
+                //     }
+                // };
+
+                // $.ajax(settings).done(function (response) {
+                //     console.log(response);
+                // });
+                $(".media-list").append('<li class="media" class="notranslate"><div class="media-body"><div class="media" ><span style="display:inline-flex; float:right;"><img src="https://cdn-icons-png.flaticon.com/512/2922/2922566.png" width="30" height="30" ><div style="overflow:auto; display: flex;"><div style = "background-color:#A6F6F1;float:right; padding:10px; color : black;border-radius:10px !important ;width: fit-content; margin-left: auto; margin-right: auto;" class="media-body"> ' + message + '</div></div></span></div></div></li>');
+
+                $.ajax({
+                    type: "POST",
+                    url: "/ask",
+                    data: $(this).serialize(),
+                    success: function (response) {
+                        $('#messageText').val('');
+                        var language = response.lang;
+                        var answer = response.answer;
+                        console.log(language)
+                        console.log(answer)
+
+                        const chatPanel = document.getElementById("chatPanel");
+                        $(".media-list").append('<li class="media" class="notranslate"><div class="media-body"><div class="media"><span style="display:inline-flex; float:left;"><div style="overflow:auto; display: flex;"><img src="https://cdn-icons-png.flaticon.com/512/4233/4233830.png" width="30" height="30" style="float:left"><div style = "background-color:#E8FFFF;float:left; padding:10px; color : black;border-radius:10px !important; width: fit-content; margin-left: auto; margin-right: auto;" class="media-body">  ' + answer + '</span></div></div></div></li>');
+                        $(".fixed-panel").stop().animate({ scrollTop: $(".fixed-panel")[0].scrollHeight }, 1000);
+
+                        msg.text = answer;
+                        msg.lang = language;
+                        speechSynthesis.speak(msg);
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
+            });
+        </script>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({ pageLanguage: 'en', autoDisplay: 'true', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL }, 'google_translate_element');
+            }
+        </script>
+        <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?
+            cb=googleTranslateElementInit">
+            </script>
+    </div>
+
+    <!-- About section -->
+    <div>
+        <section class="pt-5 pb-5 mt-0 align-items-center d-flex bg-dark"
+            style="min-height: 85vh; background-size: cover; filter: brightness(90%); background-image: url(https://img.freepik.com/free-vector/network-mesh-wire-digital-technology-background_1017-27428.jpg?t=st=1655045673~exp=1655046273~hmac=3439e6614841746021b2312a630c715b1349d0ed40f512e93e82506c2ef43e8f&w=1060);">
+            <div class="container ">
+                <div class="row align-items-center d-flex justify-content-between">
+                    <div class="col-12 col-md-6 pb-5 order-2 order-sm-2 " style="float:right;">
+                        <h1 class="  text-white font-weight-bold mb-3 mt-5 display-3" style="margin-top: 140px;">ABOUT
+                        </h1>
+                        <p class="lead text-white" style="font-weight:500; color:#113d75">BuzzWomen bot is an AI enabled
+                            chatbot that simulates human-like conversations with users via text messages and voice
+                            recognition on chat. Its key task is to enable women to ignite their personal and collective
+                            power. It supports more than 50 Languages.</p>
+                        <div class=" d-flex mt-3 mb-1">
+                            <a class="btn btn-primary btn-raised text-uppercase btn-lg  mt-md-3 " href="/"
+                                role="button">Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+    </div>
+
+    <!-- technologies used -->
+    <section class="site-section section-about text-center" id="about" style="background-color: #09203fa4;">
+        <div class="container" style="margin:auto">
+            <h2 style="color: white; font-weight:800">Technology</h2>
+            <p class="section-subtitle" style="color: rgba(164, 164, 164, 0.925);"><span>Our goal is to make AI
+                    accesible to all</span></p>
+            <br>
+            <div class="row" id="babe"
+                style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center;">
+                <div class="col-sm-3 col-xs-6"
+                    style="padding: 1.2em; background-color:rgba(255, 255, 255, 0.692); margin: 1em; min-width: 200px;">
+                    <div class="feature-about" style="border:#09203f">
+                        <div class="medium-rectangle rectangle">
+                            <i class="fa fa-laptop" aria-hidden="true"></i>
+                        </div><!-- /.rectangle -->
+                        <h3>Web Design</h3>
+                        <p>Our approach to website design is to create a website that makes the chat-bot accessible to
+                            all while ensuring ease of use and simplicity of people of all age groups and communities
+                        </p>
+                    </div><!-- /.feature-about -->
+                </div>
+                <div class="col-sm-3 col-xs-6"
+                    style="padding: 1.2em; background-color:rgba(255, 255, 255, 0.692); margin: 1em; min-width: 200px;">
+                    <div class="feature-about">
+                        <div class="medium-rectangle rectangle">
+                            <i class="fa fa-robot" aria-hidden="true"></i>
+                        </div><!-- /.rectangle -->
+                        <h3>Artificial Intelligence</h3>
+                        <p>Training the chat-bot requires Natural Language processing to understand users' queries and a
+                            suitable Deep learning model and neural networks to train it for responses</p>
+                    </div><!-- /.feature-about -->
+                </div>
+                <div class="col-sm-3 col-xs-6"
+                    style="padding: 1.2em; background-color:rgba(255, 255, 255, 0.692); margin: 1em; min-width: 200px;">
+                    <div class="feature-about">
+                        <div class="medium-rectangle rectangle">
+                            <i class="fa fa-server"></i>
+                        </div><!-- /.rectangle -->
+                        <h3>Backend and API</h3>
+                        <p>Flask is used as the backend framework of web-application in python. Chat-bot is integrated
+                            in whatsapp using API and can be integrated to other messengers to reach wider audience</p>
+                    </div><!-- /.feature-about -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- Site footer -->
+    <footer class="site-footer"
+        style="background-image: linear-gradient(135deg, #09203f 10%, #537895 100%); color:white;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <h6>Features</h6>
+                    <p class="text-justify">
+                    <ol>
+                        <li>AI trained chatbot using Deep Learning Model</li>
+                        <li>Multilingual Bot supporting more than 50 Languages</li>
+                        <li>Integration in whatsapp and other messengers</li>
+                        <li>Voice-assistant and speech recognition to support illiterate and PWDs</li>
+                        <li>User-friendly interface and manual</li>
+                    </ol>
+                    </p>
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <h6>Tech Stack</h6>
+                    <ul class="footer-links" style="color:rgba(255, 255, 255, 0.315)">
+                        <li>Python</li>
+                        <li>UI Design</li>
+                        <li>Flask</li>
+                        <li>Javascript</li>
+                        <li>Deep Learning</li>
+                        <li>NLP</li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <h6>Quick Links</h6>
+                    <ul class="footer-links" style="color:rgba(255, 255, 255, 0.315);">
+                        <li>About Us</li>
+                        <li>Contact Us</li>
+                        <li>Github</li>
+                        <li>Heroku</a></li>
+                        <li>Demo</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by
+                        <a href="#">Team B3 (Code To Give)</a>.
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <ul class="social-icons">
+                        <li><a class="facebook" href="https://www.facebook.com/buzzwomen/"><i
+                                    class="fa fa-facebook"></i></a></li>
+                        <li><a class="twitter" href="https://mobile.twitter.com/selfshakti"><i
+                                    class="fa fa-twitter"></i></a></li>
+                        <li><a class="dribbble" href="https://www.buzzwomen.org/"><i class="fa fa-dribbble"></i></a>
+                        </li>
+                        <li><a class="linkedin" href="https://in.linkedin.com/company/buzzwomen"><i
+                                    class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <center>
+            <font color="white">Coded with <i class="fa fa-heart"></i> by Team B3
+        </center>
+    </footer>
+
+    <!-- <footer class="text-center text-white"
+            style="background: linear-gradient(135deg, rgba(96, 143, 149, 1) 0%, rgba(0, 133, 136, 1) 9%, rgba(12, 36, 73, 1) 52%, rgba(96, 143, 149, 1) 100%); position:fixed;
+            bottom:0;
+            width:100%; padding: 1em;">
+            <div class="container p-4 pb-0" style="margin-bottom: 2px;">
+          -->
+
+    <!--<footer><p><center><font color="white">Coded with <i class="fa fa-heart"></i> by Team B3</center></p></font></footer>-->
+</body>
+
+</html>

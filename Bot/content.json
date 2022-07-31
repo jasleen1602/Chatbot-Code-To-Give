@@ -1,0 +1,638 @@
+{
+        "intents": [
+                {
+                        "tag": "1",
+                        "patterns": [
+                                "Hi",
+                                "Is anyone there?",
+                                "Hello",
+                                "Hey",
+                                "Hola",
+                                "Hii",
+                                "Greetings",
+                                "Hey there",
+                                "who's there",
+                                "anyone?"
+                        ],
+                        "responses": [
+                                "Hello, how can I help?",
+                                "Hi there, how can I help?"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "2",
+                        "patterns": [
+                                "Who are you",
+                                "What is you name",
+                                "Do you have a name",
+                                "name"
+                        ],
+                        "responses": [
+                                "Hi, I'm Buzz Women Bot",
+                                "My name is Buzz Women Bot",
+                                "I'm Buzz Women Bot"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "3",
+                        "patterns": [
+                                "What is Buzz Women",
+                                "What is Buzzwomen",
+                                "About Buzz Women",
+                                "Buzz Women",
+                                "about youself"
+                        ],
+                        "responses": [
+                                "Buzz Women is the global movement by and for women. We bring transformation within reach. And enable women to ignite their personal and collective power."
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "4",
+                        "patterns": [
+                                "When was Buzz Women founded?",
+                                "Buzz Women foundation",
+                                "foundation year of Buzz women",
+                                "foundation year?"
+                        ],
+                        "responses": [
+                                "Buzz Women was founded in 2012"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "5",
+                        "patterns": [
+                                "How many woman have been trained?",
+                                "What is your success ratio",
+                                "Success ratio",
+                                "how many lives changed",
+                                "number of lives changed",
+                                "numbers of lives affected",
+                                "lives changed",
+                                "lives affected"
+                        ],
+                        "responses": [
+                                "So far, Buzz Women has trained 300,000 women with 100s of volunteers.",
+                                "About 190,000 women have come out of moneylenders trap in rural areas, and about 40,000 new businesses have been started by the women who were trained by Buzz Women volunteers."
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "6",
+                        "patterns": [
+                                "Can you help me to earn money",
+                                "I want to earn money",
+                                "I want to make money",
+                                "how can you help",
+                                "can you help me",
+                                "help me",
+                                "help me earn"
+                        ],
+                        "responses": [
+                                "Yes, I'm here to help you. How much do you want to earn?"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "8",
+                        "patterns": [
+                                "No, I'm not working",
+                                "No, I'm a housewife",
+                                "No, I dont work",
+                                "I dont do any work",
+                                "i don't work",
+                                "no, Considering your expectations, help me know more about yourself. Are you currently working",
+                                "yes, You do not get enough free time to start a business. Do you have people who can work with you."
+                        ],
+                        "responses": [
+                                "Okay then, let's see what you can do. Do you have any business idea?"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "9",
+                        "patterns": [
+                                "Yes, I'm working at ",
+                                "Yes, I do farming in my own farm",
+                                "I'm working",
+                                "I work there",
+                                "yes, Considering your expectations, help me know more about yourself. Are you currently working"
+                        ],
+                        "responses": [
+                                "Ok that's great! How much free time do you get after work in a day?"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "10",
+                        "patterns": [
+                                "Yes I have an idea",
+                                "yes, Ok, Do you have any idea?",
+                                "Yes, I have some idea",
+                                "Yes, I have idea",
+                                "Yes, I do have idea",
+                                "yes, You are getting enough time to start something new. Do you have any idea?",
+                                "yes, Okay then, let's see what you can do. Do you have any business idea?"
+                        ],
+                        "responses": [
+                                "Great! Tell me about your idea"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "11",
+                        "patterns": [
+                                "No I don't have an idea",
+                                "no, Ok, Do you have any idea?",
+                                "No idea",
+                                "I don't have an idea",
+                                "give me idea",
+                                "no, You are getting enough time to start something new. Do you have any idea?"
+                        ],
+                        "responses": [
+                                "Let's access what you can do. What are you good at?",
+                                "Let's access what you can do. What are your skills?",
+                                "Let's access what you can do. What are your interests?"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "12",
+                        "patterns": [
+                                "I'm good at tailoring",
+                                "tailor",
+                                "Good at stiching clothes",
+                                "I'm good at stiching",
+                                "I'm good at sewing",
+                                "I can sew",
+                                "sewing",
+                                "knitting",
+                                "stiching clothes"
+                        ],
+                        "responses": [
+                                "Ohh that's amazing! Do you have any knowledge of fabric and style?"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "13",
+                        "patterns": [
+                                "I have some knowledge of clothes",
+                                "I know some styles",
+                                "I have some knowledge of styles",
+                                "yes, Ohh that's amazing! Do you have any knowledge of fabric and style?"
+                        ],
+                        "responses": [
+                                "Do you also know how to stich, zigzag or staright?"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "14",
+                        "patterns": [
+                                "Yes I know",
+                                "I know stiching",
+                                "I know stiching",
+                                "yes, Do you also know how to stich, zigzag or staright?"
+                        ],
+                        "responses": [
+                                "Are you also aware of measurements?"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "30",
+                        "patterns": [
+                                "no, Are you also aware of measurements?",
+                                "no, Do you also know how to stich, zigzag or staright?",
+                                "no, Ohh that's amazing! Do you have any knowledge of fabric and style?",
+                                "no, Are you also aware of measurements?"
+                        ],
+                        "responses": [
+                                "You should think of options other than tailoring if you do not have this knowledge. You could work as a material supplier by getting knowledge from someone experienced or look for other ooptions."
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "15",
+                        "patterns": [
+                                "I'm aware",
+                                "Yes, I know how to measure",
+                                "Yes, I know how to take measurements",
+                                "yes, Are you also aware of measurements?"
+                        ],
+                        "responses": [
+                                "How many tailors are already present in your area?"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "16",
+                        "patterns": [
+                                "Maybe 4-5 tailors",
+                                "many",
+                                "about 45"
+                        ],
+                        "responses": [
+                                "There are less chances for you to earn money through this as there are plenty present. You can supply material to them or think of other options"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "40",
+                        "patterns": [
+                                "which options",
+                                "suggest options",
+                                "what should i do",
+                                "what else can i do"
+                        ],
+                        "responses": [
+                                "Do you know how to cook?"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "41",
+                        "patterns": [
+                                "no, Do you know how to cook?"
+                        ],
+                        "responses": [
+                                "Have you thought about marketing?"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "17",
+                        "patterns": [
+                                "Not many",
+                                "a few",
+                                "no tailor present",
+                                "1-2"
+                        ],
+                        "responses": [
+                                "Woah! You can go ahead with this idea! Do you have a place to start this?"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "18",
+                        "patterns": [
+                                "I'm good at cooking",
+                                "cook",
+                                "cooking",
+                                "bakery",
+                                "I'm good at cooking food",
+                                "I'm good at baking",
+                                "yes, Do you know how to cook?"
+                        ],
+                        "responses": [
+                                "Ohh that's amazing! Do people love to eat your food?"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "19",
+                        "patterns": [
+                                "Yes people love my food",
+                                "Yes they love it",
+                                "Love it",
+                                "Yes its tasty",
+                                "Yes people love to eat",
+                                "Yes they find it yummmy",
+                                "Yes they like my food very much",
+                                "yes, Ohh that's amazing! Do people love to eat your food?",
+                                "no, Ohh that's amazing! Do people love to eat your food?"
+                        ],
+                        "responses": [
+                                "Do people ever suggested you to be a caterer?"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "91",
+                        "patterns": [
+                                "no people do not love my food",
+                                "no, Ohh that's amazing! Do people love to eat your food?",
+                                "no, they don't"
+                        ],
+                        "responses": [
+                                "You should not start a cooking business if people don't like your food."
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "20",
+                        "patterns": [
+                                "yes, Do people ever suggested you to be a caterer?",
+                                "Yes some suggested me",
+                                "Yes they told me",
+                                "Yes I was suggested",
+                                "Yes, they always say",
+                                "A few of them",
+                                "no, Do people ever suggested you to be a caterer?",
+                                "they didn't"
+                        ],
+                        "responses": [
+                                "Are you also aware about the quality of vegetables?"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "21",
+                        "patterns": [
+                                "yes, Are you also aware about the quality of vegetables?",
+                                "I'm aware of vegetables",
+                                "I'm aware of different food",
+                                "I'm aware of their quality"
+                        ],
+                        "responses": [
+                                "Do you also know how to make food presentable?"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "92",
+                        "patterns": [
+                                "no, Are you also aware about the quality of vegetables?",
+                                "I'm not aware of vegetables",
+                                "I do not understand the difference"
+                        ],
+                        "responses": [
+                                "Ensuring good quality of food is important. Ending up buying poor quality supply can cause food poisoning and loss in business."
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "50",
+                        "patterns": [
+                                "no, Do you also know how to make food presentable?",
+                                "no, i do not know how to present food",
+                                "i do not present food well"
+                        ],
+                        "responses": [
+                                "Presentation is very important in catering/bakery/tiffin services. You will need to learn that"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "22",
+                        "patterns": [
+                                "yes, Do you also know how to make food presentable?",
+                                "Yes I know to make food presentable",
+                                "Yes, I love to present food",
+                                "Yes, I know how to serve food"
+                        ],
+                        "responses": [
+                                "Are there any bakeries/tiffin services/catering services in your area?"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "51",
+                        "patterns": [
+                                "yes, Are there any bakeries/tiffin services/catering services in your area?",
+                                "yes a lot"
+                        ],
+                        "responses": [
+                                "Have you cooked for crowd before?"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "53",
+                        "patterns": [
+                                "yes, Have you cooked for crowd before?",
+                                "yes, i have",
+                                "yes, i have cooked before"
+                        ],
+                        "responses": [
+                                "Woah! You can go ahead with this idea! Do you have a place to start this?"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "54",
+                        "patterns": [
+                                "no, Have you cooked for crowd before?",
+                                "no, i have not",
+                                "no, i have never cooked before"
+                        ],
+                        "responses": [
+                                "Before starting a business in catering, you got to practice first by cooking for masses. Try cooking for family events, gatherings, students and working class first."
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "52",
+                        "patterns": [
+                                "no, Are there any bakeries/tiffin services/catering services in your area?",
+                                "Not many"
+                        ],
+                        "responses": [
+                                "Woah! You can go ahead with this idea! Do you have a place to start this?"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "23",
+                        "patterns": [
+                                "I'm good at business",
+                                "marketing",
+                                "selling",
+                                "I'm good at selling clothes",
+                                "I'm good at marketing",
+                                "yes, Have you thought about marketing?"
+                        ],
+                        "responses": [
+                                "Ohh that's amazing! Are you good at convincing?"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "24",
+                        "patterns": [
+                                "yes, Ohh that's amazing! Are you good at convincing?",
+                                "Yes, I'm good at convincing",
+                                "Yes I'm a good convincer",
+                                "Yes a good convincer",
+                                "Yes, good at convincing",
+                                "no, Have you thought about marketing?"
+                        ],
+                        "responses": [
+                                "can you understand customer's needs?"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "25",
+                        "patterns": [
+                                "Yes, I understand",
+                                "Yes I can understand",
+                                "yes, can you understand customer's needs?"
+                        ],
+                        "responses": [
+                                "Are you well aware of logistics and accounts?"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "37",
+                        "patterns": [
+                                "yes, Are you well aware of logistics and accounts?",
+                                "yes, i know accounts",
+                                "yes i know maths",
+                                "i am good at accounts"
+                        ],
+                        "responses": [
+                                "Woah! You can go ahead with this idea! Do you have a place to start this?"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "38",
+                        "patterns": [
+                                "no, Are you well aware of logistics and accounts?",
+                                "no, i do not know accounts",
+                                "what is that",
+                                "what is accounts",
+                                "what is logistics"
+                        ],
+                        "responses": [
+                                "Marketing requires one to be aware of money management. You should have a well maintained account of your shop in a bank/registered authority. Each and every transaction should be properly billed and noted. You can learn it and then proceed"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "43",
+                        "patterns": [
+                                "No, I can not understand",
+                                "no, Do you also know how to make food presentable?",
+                                "no, can you understand customer's needs?",
+                                "no, Ohh that's amazing! Are you good at convincing?"
+                        ],
+                        "responses": [
+                                "You could look for other options then"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "26",
+                        "patterns": [
+                                "OK",
+                                "Okay",
+                                "Kk",
+                                "okay",
+                                "ok",
+                                "okay thanks",
+                                "ok thanks"
+                        ],
+                        "responses": [
+                                "Please feel free to contact me if you need any further information",
+                                "Drop me a line if I can do anything else for you."
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "27",
+                        "patterns": [
+                                "Bye",
+                                "See you later",
+                                "Goodbye",
+                                "By"
+                        ],
+                        "responses": [
+                                "See you later, thanks for visiting",
+                                "Have a nice day, thank you",
+                                "Bye! Come back again soon."
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "28",
+                        "patterns": [
+                                "Thank you",
+                                "Thanks",
+                                "Thank You so much",
+                                "Gratitude"
+                        ],
+                        "responses": [
+                                "Your welcome"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "29",
+                        "patterns": [
+                                "no, You do not get enough free time to start a business. Do you have people who can work with you.",
+                                "i do not have support",
+                                "i do not have people for help"
+                        ],
+                        "responses": [
+                                "Starting your business requires time and support. If you do not have that, I suggest you to gather support first."
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "31",
+                        "patterns": [
+                                "yes, Woah! You can go ahead with this idea! Do you have a place to start this?",
+                                "yes i have a place",
+                                "I can start at home",
+                                "yes, my home",
+                                "I can start at my godown"
+                        ],
+                        "responses": [
+                                "That's great. You can save some money on place then. How much money would you need to start the work?"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "32",
+                        "patterns": [
+                                "no, Woah! You can go ahead with this idea! Do you have a place to start this?",
+                                "I don't have a place to start with",
+                                "No place"
+                        ],
+                        "responses": [
+                                "You will need to rent a place. How much money would you need to start this?"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "34",
+                        "patterns": [
+                                "good money"
+                        ],
+                        "responses": [
+                                "That's a huge amount for investment. You can loan some from bank, some from NGOs and rest from relatives."
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "35",
+                        "patterns": [
+                                "less money"
+                        ],
+                        "responses": [
+                                "That much money can be borrowed from relatives, social groups, NGOs."
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "36",
+                        "patterns": [
+                                "which NGOs?",
+                                "List some NGOs?",
+                                "tell me about social groups?",
+                                "tell me about NGOs?"
+                        ],
+                        "responses": [
+                                "Karnataka State Women Development Corporation, Udyogini Scheme, Women training Programme and Marketing assistance Scheme"
+                        ],
+                        "context_set": ""
+                }
+        ]
+}
